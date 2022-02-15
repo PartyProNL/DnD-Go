@@ -7,11 +7,13 @@
   <body>
     <?php
     session_start();
-    //$register_failed = $_SESSION["register_failed"];
 
-    print_r($_SESSION);
+    if(array_key_exists("register_failed", $_SESSION)) {
+      $fail_message = $_SESSION["register_failed"];
+      echo $fail_message."<br>";
+      unset($_SESSION['register_failed']);
+    }
 
-    unset($_SESSION['register_failed']);
     session_destroy();
      ?>
 

@@ -27,7 +27,7 @@
     if($aantalGevondenAccounts > 0) {
       // Session gebruiken om op te slaan wat er gebeurd is
       session_start();
-      $_SESSION["register_failed"] = "email_already_exists";
+      $_SESSION["register_failed"] = "Er bestaat al een account met deze e-mail!";
 
       // Terugsturen naar de register pagina
       header('Location: register.php');
@@ -35,8 +35,16 @@
       // De leveranciertoevoegen
       $sql = "INSERT INTO users (email, password, characters) VALUES ('".$email."', '".$password."', '')";
       $resultaat = $db->exec($sql);
-      echo 'Aantal toegevoegde accounts: '.$resultaat;
+
+      // De verbinding weer sluiten
       $db = NULL;
+
+      // Session gebruiken om door te geven dat een account is gemaakt
+      session_start();
+      $_SESSION["register_succeeded"] = "Je account is succesvol aangemaakt! Gebruik nu dezelfde gegevens om in te loggen";
+
+      // Doorsturen naar de login pagina
+      header('Location: login.html');
     }
   ?>
 </body>
