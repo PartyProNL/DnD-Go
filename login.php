@@ -1,34 +1,14 @@
-<?php
-   ob_start();
-   session_start();
-?>
-
-<html lang = "en">
-
-   <head>
-      <title>DnDGo login</title>
-      <link href = "styles/style.css" rel = "stylesheet">
-   </head>
-
-   <body>
-     <?php
-     $password = $_POST["password"];
-     $email = $_POST["email"];
-     $user_id = "SELECT user_id
-                  FROM users
-                  WHERE email = '".$email."' AND
-                  WHERE password = '".$password."'";
-
-
-        if (true) {
-          echo $user_id;
-        }
-     ?>
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>DnD Go | Inloggen</title>
+  </head>
+  <body>
+    <form action="loginprocess.php" method="post">
+      Email<input type="text" name="email" value=""><br>
+      Wachtwoord<input type="text" name="password" value=""><br>
+      <input type="submit">
+    </form>
   </body>
-         Click <a href = "home.html" tite = "Logout">here</a> to return to the homepage.
-
-      </div>
-
-   </body>
 </html>
