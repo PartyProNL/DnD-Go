@@ -44,7 +44,7 @@
       $_SESSION["register_succeeded"] = "Je account is succesvol aangemaakt! Gebruik nu dezelfde gegevens om in te loggen";
 
       // Doorsturen naar de login pagina
-      header('Location: login.html');
+      header('Location: login.php');
     }
   ?>
 </body>
