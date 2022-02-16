@@ -25,7 +25,7 @@
      // If check om het juiste uit te uitvoeren
      if($aantalGevondenAccounts > 0) {
        // Session token generaten
-       $session_token = random_int(0, 99999);
+       $session_token = rand(0, 99999);
 
        // Deze token in de database stoppen
        $sql = "UPDATE users SET session='".$session_token."' WHERE email='".$email."'";
@@ -37,6 +37,7 @@
        // Session token in de session stoppen
        session_start();
        $_SESSION["session"] = $session_token;
+       $_SESSION["session_email"] = $email;
 
        // Doorsturen naar de dashboard home pagina
        header('Location: dashboard/dashboard.php');

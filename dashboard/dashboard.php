@@ -12,12 +12,12 @@
       // De session token ophalen
       $session_token = $_SESSION["session"];
 
-      // DEBUG CODE
-      echo $session_token."<br>";
+      // Email Ophalen
+      $session_email = $_SESSION["session_email"];
 
       // Checken of de session token wel in de database zit
       $db = new PDO('sqlite:../database/dndgo');
-      $sql = "SELECT COUNT(session) AS aantal FROM users WHERE session = '".$session_token."'";
+      $sql = "SELECT COUNT(session) AS aantal FROM users WHERE session = '".$session_token."' AND email = '".$session_email."'";
       $resultaat = $db->query($sql);
       $db = null;
 
@@ -28,7 +28,6 @@
       }
 
       if($aantalGevondenAccounts == 0) {
-        echo "tes21t";
         // Session token weghalen
         unset($_SESSION['session']);
 
@@ -36,7 +35,7 @@
         $_SESSION["session_ended"] = "Je sessie is verlopen. Log opnieuw in.";
 
         // Doorsturen naar de login pagina
-        //header('Location: ../login.php');
+        header('Location: ../login.php');
       }
     } else {
       // Bericht meegeven dat de sessie verlopen is
