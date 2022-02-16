@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.login-page {
+  width: 100%;
+  height: 100%;
+  background: url(../images/DnDGo_library.jpg);
+  background-repeat:no-repeat;
+  background-position: center center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-menu {
+  width: 28%;
+  height: 75%;
+  color: white;
+  background-color: white;
+  border-radius: 3%;
+  box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.35);
+}
+
+.login-menu-top {
+  width: 100%;
+  height: 15%;
+  text-align: center;
+  align-items: center;
+}
+
+.login-menu-top-title {
+  color: black;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  width: 100%;
+  height: 30%;
+  padding-top: 5%;
+  padding-bottom: 2.5%;
+}
+
+.login-menu-top-line {
+  margin: auto;
+  background-color: black;
+  width: 30%;
+  height: 2.5%;
+}
+
+.login-menu-form {
+  width: 100%;
+  height: 50%;
+}
+
+.login-menu-form-form {
+  width: 100%;
+  height: 100%;
+}
+
+.login-menu-form-input-container-container {
+  width: 100%;
+  height: 80%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-menu-form-input-container {
+  width: 75%;
+  height: 100%;
+}
+
+.login-menu-form-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  color: black;
+  padding-bottom: 1%;
+  font-size: 125%;
+}
+
+.login-menu-form-text-password {
+  margin-top: 5%;
+}
+
+.login-menu-form-input {
+  width: 100%;
+  height: 15%;
+  background-color: #F3F3F3;
+  border-radius: 15px;
+  font-size: 125%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  color: #3F3F3F;
+}
+
+.login-menu-form-input:focus {
+  border: 0;
+}
+
+.login-menu-form-submit {
+  float: right;
+  width: 10%;
+  height: 10%;
+  padding-right: 20%;
+}
+
+.login-menu-error-container {
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-menu-error-text {
+  color: red;
+  font-family: Roboto;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 90%;
+  font-style: italic;
+}
+
+.login-menu-separator {
+  width: 100%;
+  height: 10%;
+  background-color: blue;
+}
+
+.login-menu-register {
+  width: 100%;
+  height: 15%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-menu-register-button {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  width: 45%;
+  height: 50%;
+  background-color: #2E86AB;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 200%;
+  border-radius: 10px;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.login-menu-register-button:hover {
+  opacity: 0.9;
+}

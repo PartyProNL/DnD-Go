@@ -25,7 +25,7 @@
      // If check om het juiste uit te uitvoeren
      if($aantalGevondenAccounts > 0) {
        // Session token generaten
-       $session_token = rand(0, 99999);
+       $session_token = rand(0, 9999999);
 
        // Deze token in de database stoppen
        $sql = "UPDATE users SET session='".$session_token."' WHERE email='".$email."'";
@@ -47,7 +47,7 @@
 
        // Session gebruiken om door te geven dat de gegevens niet kloppen
        session_start();
-       $_SESSION["login_failed"] = "De opgegeven e-mail of het wachtwoord klopt niet";
+       $_SESSION["login_failed"] = "De opgegeven e-mail of wachtwoord klopt niet";
 
        // Doorsturen naar de login pagina
        header('Location: login.php');
