@@ -31,6 +31,10 @@
 
       // Terugsturen naar de register pagina
       header('Location: register.php');
+    } else if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      session_start();
+      $_SESSION["register_failed"] = "E-mail is ongeldig";
+      header('Location: register.php');
     } else {
       // De leveranciertoevoegen
       $sql = "INSERT INTO users (email, password, characters) VALUES ('".$email."', '".$password."', '')";

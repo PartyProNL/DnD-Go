@@ -28,9 +28,9 @@
             <div class="login-menu-form-input-container-container">
               <div class="login-menu-form-input-container">
                 <p class="login-menu-form-text">E-mailadres</p>
-                <input class="login-menu-form-input" type="text" name="email" ><br>
+                <input class="login-menu-form-input" type="text" name="email" required><br>
                 <p class="login-menu-form-text login-menu-form-text-password">Wachtwoord</p>
-                <input class="login-menu-form-input" type="text" name="password" value=""><br>
+                <input class="login-menu-form-input" type="text" name="password" value="" required><br>
               </div>
             </div>
 

@@ -18,8 +18,8 @@
      ?>
 
     <form action="registerprocess.php" method="post">
-      Email<input type="text" name="email" value=""><br>
-      Wachtwoord<input type="text" name="password" value=""><br>
+      Email<input type="text" name="email" value="" required><br>
+      Wachtwoord<input type="text" name="password" value="" required><br>
       <input type="submit">
     </form>
   </body>
