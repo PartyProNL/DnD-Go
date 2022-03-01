@@ -58,9 +58,12 @@
           }
            ?>
         </div>
-        <div class="login-menu-separator">
 
+        <div class="login-menu-separator">
+          <div class="login-menu-separator-line">
+          </div>
         </div>
+
         <div class="login-menu-register">
           <a class="login-menu-register-button" href="register.php">Registreren</a>
         </div>

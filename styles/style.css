@@ -78,6 +78,7 @@
   float: right;
 }
 
+
 .home-register-button {
   text-decoration: none;
   position: absolute;
@@ -94,17 +95,20 @@
   text-align: center;
 
   color: #FFFFFF;
+  float: right;
 }
 
 .background {
   width: 100%;
   height: 600px;
   background: url(../images/home_banner.jpg);
-  position: sticky;
+  position: fixed;
 }
 
 .main-body {
   margin-left: 15%;
   margin-right: 15%;
   background-color: #f8ac62;
+  position: absolute;
+  z-index: 999;
 }
