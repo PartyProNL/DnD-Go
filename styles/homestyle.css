@@ -106,17 +106,38 @@
 }
 
 .main-body {
-  width: 70%;
   margin-left: 15%;
   margin-right: 15%;
+  width: 70%;
   background-color: #f8ac62;
-  background-size: ;
-  position: sticky;
+  position: absolute;
   z-index: 999;
 }
 
 .advert{
-  width: 70%;
   margin-left: 15%;
   margin-right: 15%;
+  width: 70%;
+  height: 735;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.selectie{
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+  height: 735;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.free{
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+  height: 735;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
