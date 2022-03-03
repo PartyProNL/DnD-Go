@@ -114,30 +114,56 @@
   z-index: 999;
 }
 
+.welcome{
+  width: 100%;
+  height: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: url(../images/dragon_fight.jpg);
+  background-size: cover;
+}
+
+.welcome-title{
+  text-align: center;
+  font-size: 80px;
+  text-shadow: 15%;
+  color: white;
+}
+
+.welcome-greeting{
+  text-align: center;
+  font-size: 25px;
+  text-shadow: 15px;
+  color: #c6c6c6;
+}
+
 .advert{
-  margin-left: 15%;
-  margin-right: 15%;
+  padding-left: 15%;
+  padding-right: 15%;
   width: 70%;
   height: 735;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #eaeaea;
 }
 
 .selectie{
-  margin-left: 15%;
-  margin-right: 15%;
+  padding-left: 15%;
+  padding-right: 15%;
   width: 70%;
   height: 735;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-align: right;
+  background-color: #dadada;
 }
 
 .free{
-  margin-left: 15%;
-  margin-right: 15%;
+  padding-left: 15%;
+  padding-right: 15%;
   width: 70%;
   height: 735;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #eaeaea;
 }
