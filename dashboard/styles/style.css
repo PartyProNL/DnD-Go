@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+header {
+  height: 10%;
+  width: 100%;
+  background-color: #2E86AB;
+}
+
+.lower {
+  height: 90%;
+  width: 100%;
+}
+
+.sidebar {
+  height: 100%;
+  width: 18%;
+  background-color: white;
+  float: left;
+}
+
+.page {
+  height: 100%;
+  width: 82%;
+  background-color: #F1F1F1;
+  float: right;
+}
