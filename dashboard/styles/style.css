@@ -11,7 +11,41 @@ html, body {
 header {
   height: 10%;
   width: 100%;
-  background-color: #2E86AB;
+  background-color: #008080;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header-title-container {
+  width: 18%;
+  height: 100%;
+}
+
+.header-logo-container {
+  height: 100%;
+  width: 25%;
+  float: left;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo {
+  height: 80%;
+}
+
+.header-text-container {
+  height: 100%;
+  width: 75%;
+  float: right;
+}
+
+.header-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 180%;
+  color: #FFFFFF;
 }
 
 .lower {
@@ -24,6 +58,107 @@ header {
   width: 18%;
   background-color: white;
   float: left;
+}
+
+.sidebar-upper {
+  width: 100%;
+  height: 75%;
+}
+
+.sidebar-upper-item-container {
+  width: 100%;
+  height: 13.3%;
+}
+
+.sidebar-upper-item-icon-container {
+  float: left;
+  height: 100%;
+  width: 22%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-upper-item-icon {
+  padding-left: 8%;
+  height: 70%;
+}
+
+.sidebar-upper-item-text-container {
+  float: left;
+  height: 100%;
+  width: 78%;
+}
+
+.sidebar-upper-item-text {
+  text-decoration: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 170%;
+  line-height: 58px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  padding-left: 5%;
+}
+
+.sidebar-middle {
+  width: 100%;
+  height: 3%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-separator {
+  width: 80%;
+  background-color: #000000;
+  height: 20%;
+}
+
+.sidebar-lower {
+  width: 100%;
+  height: 20%;
+}
+
+.sidebar-lower-item-container {
+  width: 100%;
+  height: 50%;
+}
+
+.sidebar-lower-item-icon-container {
+  float: left;
+  height: 100%;
+  width: 22%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-lower-item-icon {
+  padding-left: 8%;
+  height: 70%;
+}
+
+.sidebar-lower-item-text-container {
+  float: left;
+  height: 100%;
+  width: 78%;
+}
+
+.sidebar-lower-item-text {
+  text-decoration: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 170%;
+  line-height: 58px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  padding-left: 5%;
 }
 
 .page {
