@@ -33,7 +33,8 @@ header {
 }
 
 .header-logo {
-  height: 80%;
+  height: 130%;
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(222deg) brightness(105%) contrast(98%);
 }
 
 .header-text-container {
