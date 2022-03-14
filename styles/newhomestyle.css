@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+header {
+  width: 100%;
+  height: 130px;
+}
+
+.header-logo-container {
+  height: 100%;
+  float: left;
+  width: 30%;
+}
+
+.header-logo-logo-container {
+  height: 100%;
+  float: left;
+  width: 30%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo {
+  height: 120%;
+}
+
+.header-title-container {
+  float: right;
+  height: 100%;
+  width: 70%;
+
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 70px;
+  line-height: 82px;
+  padding-left: 3%
+}
+
+.header-login-register-container {
+  height: 100%;
+  background-color: blue;
+  float: right;
+  width: 40%;
+}
+
+.banner {
+  width: 100%;
+  height: 600px;
+  background: url(../images/home_banner.jpg);
+  background-repeat:no-repeat;
+  background-position: center center;
+}
+
+.karakters {
+  width: 100%;
+  height: 700px;
+}
+
+.classes {
+  width: 100%;
+  height: 700px;
+  background-color: #F1F1F1;
+}
+
+.gratis {
+  width: 100%;
+  height: 700px;
+}
+
+.registreer {
+  width: 100%;
+  height: 580px;
+  background-color: #F1F1F1;
+}
+
+footer {
+  width: 100%;
+  height: 120px;
+}

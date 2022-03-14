@@ -40,7 +40,7 @@
        $_SESSION["session_email"] = $email;
 
        // Doorsturen naar de dashboard home pagina
-       header('Location: dashboard/dashboard.php');
+       header('Location: dashboard/characters.php');
      } else {
        // Verbinding weer sluiten
        $db = NULL;
