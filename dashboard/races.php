@@ -114,7 +114,13 @@
         </div>
       </div>
       <div class="page">
-
+        <div class="characters-available-container">
+          <div class="characters-available">
+            <div class="characters-available-header">
+              <p class="characters-available-header-txt">Lijst van beschikbare classes</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
