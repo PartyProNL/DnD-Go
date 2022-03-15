@@ -6,7 +6,7 @@
 
 header {
   width: 100%;
-  height: 130px;
+  height: 70px;
 }
 
 .header-logo-container {
@@ -18,11 +18,13 @@ header {
 .header-logo-logo-container {
   height: 100%;
   float: left;
-  width: 30%;
+  width: 15%;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  padding-left: 3%;
 }
 
 .header-logo {
@@ -32,7 +34,7 @@ header {
 .header-title-container {
   float: right;
   height: 100%;
-  width: 70%;
+  width: 80%;
 
   display: flex;
   align-items: center;
@@ -42,40 +44,230 @@ header {
   font-family: Roboto;
   font-style: normal;
   font-weight: 800;
-  font-size: 70px;
+  font-size: 50px;
   line-height: 82px;
-  padding-left: 3%
 }
 
 .header-login-register-container {
   height: 100%;
-  background-color: blue;
   float: right;
-  width: 40%;
+  width: 30%;
+}
+
+.header-item-container {
+  width: 50%;
+  height: 100%;
+  float: left;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-login {
+  width: 90%;
+  height: 70%;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
+
+  color: #000000;
+  text-decoration: none;
+}
+
+.header-register {
+  width: 90%;
+  height: 70%;
+  background-color: #2E86AB;
+  border-radius: 15px;
+
+  text-decoration: none;
+  color: white;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
 }
 
 .banner {
   width: 100%;
-  height: 600px;
+  height: 460px;
   background: url(../images/home_banner.jpg);
   background-repeat:no-repeat;
   background-position: center center;
 }
 
+.banner-upper {
+  width: 100%;
+  height: 60%;
+  text-align: center;
+}
+
+.banner-title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 150px;
+  line-height: 400px;
+  color: #FFFFFF;
+  text-shadow: 10px 15px 4px rgba(41, 16, 16, 0.5);
+}
+
+.banner-lower {
+  width: 100%;
+  height: 40%;
+  text-align: center;
+}
+
+.banner-subtitle {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 40px;
+
+  color: #FFFFFF;
+
+  text-shadow: 10px 10px 4px rgba(0, 0, 0, 0.5);
+}
+
 .karakters {
   width: 100%;
-  height: 700px;
+  height: 475px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .classes {
   width: 100%;
-  height: 700px;
+  height: 475px;
   background-color: #F1F1F1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.classes-inside {
+  width: 85%;
+  height: 75%;
+}
+
+.classes-left {
+  width: 55%;
+  height: 100%;
+  float: left;
+}
+
+.classes-img {
+  width: 100%;
+  height: 100%;
+}
+
+.classes-right {
+  width: 35%;
+  height: 100%;
+  float: right;
+}
+
+.classes-title-container {
+  width: 100%;
+  height: 25%;
+}
+
+.classes-title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 35px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+
+.classes-text-container {
+  width: 100%;
+  height: 75%;
+}
+
+.classes-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
 }
 
 .gratis {
   width: 100%;
-  height: 700px;
+  height: 475px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gratis-inside {
+  width: 85%;
+  height: 75%;
+}
+
+.gratis-left {
+  width: 35%;
+  height: 100%;
+  float: left;
+}
+
+.gratis-img {
+  width: 100%;
+  height: 100%;
+}
+
+.gratis-right {
+  width: 55%;
+  height: 100%;
+  float: right;
+}
+
+.gratis-title-container {
+  width: 100%;
+  height: 25%;
+}
+
+.gratis-title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 35px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+
+.gratis-text-container {
+  width: 100%;
+  height: 75%;
+}
+
+.gratis-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 33px;
+  color: #000000;
 }
 
 .registreer {
@@ -86,5 +278,15 @@ header {
 
 footer {
   width: 100%;
-  height: 120px;
+  height: 40px;
+  text-align: center;
+}
+
+.footer-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 50px;
+  color: #000000;
 }
