@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>DnD Go | Dashboard</title>
+    <title>DnD Go | Dashboard-classes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -114,7 +114,35 @@
         </div>
       </div>
       <div class="page">
+        <div class="class-available-container">
+          <div class="class-available">
+            <div class="class-available-header">
+              <p class="class-available-header-txt">Lijst van beschikbare classes</p>
+            </div>
+            <div class="scroll">
+              <?php
+              // Verbinden met de database
+              $db = new PDO('sqlite:../database/dndgo');
 
+              $sql = "SELECT * FROM classes";
+              $classResult = $db->query($sql);
+
+              foreach ($classResult as $row) {
+                $name = $row['class_name'];
+                $desc = $row['class_description'];
+                echo "<div class=\"class-desc\">
+                  <div class=\"class-desc-header\">
+                    <h3>$name</h3>
+                  </div>
+                  <p class=\"class-desc-txt\">$desc</p>
+                </div>";
+              }
+
+              $db = NULL;
+              ?>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

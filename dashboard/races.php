@@ -114,10 +114,32 @@
         </div>
       </div>
       <div class="page">
-        <div class="characters-available-container">
-          <div class="characters-available">
-            <div class="characters-available-header">
-              <p class="characters-available-header-txt">Lijst van beschikbare classes</p>
+        <div class="races-available-container">
+          <div class="races-available">
+            <div class="races-available-header">
+              <p class="races-available-header-txt">Lijst van beschikbare classes</p>
+            </div>
+            <div class="scroll">
+              <?php
+              // Verbinden met de database
+              $db = new PDO('sqlite:../database/dndgo');
+
+              $sql = "SELECT * FROM races";
+              $raceResult = $db->query($sql);
+
+              foreach ($raceResult as $row) {
+                $name = $row['race_name'];
+                $desc = $row['race_description'];
+                echo "<div class=\"race-desc\">
+                  <div class=\"race-desc-header\">
+                    <h3>$name</h3>
+                  </div>
+                  <p class=\"race-desc-txt\">$desc</p>
+                </div>";
+              }
+
+              $db = NULL;
+              ?>
             </div>
           </div>
         </div>
