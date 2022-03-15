@@ -51,7 +51,7 @@
          </div>
 
          <div class="login-menu-login">
-           <a class="login-menu-login-button" href="login.php">Registreren</a>
+           <a class="login-menu-login-button" href="login.php">Inloggen</a>
          </div>
        </div>
      </div>
