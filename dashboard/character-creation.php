@@ -114,18 +114,41 @@
         </div>
       </div>
       <div class="page">
-        <div class="character-new">
-          <p class="character-new-txt">Welkom terug
-          <?php
-          // Verbinden met de database
-          $email = $_SESSION["session_email"];
-          $cut = explode("@",$email);
-          echo $cut[0];
-          ?>
-          </p>
-          <div class="character-new-plus">
-            <img class="character-new-plus-pic"src="../images/icons/Plus.png" alt="Plus!">
-          </div>
+        <div class="character-creator-form">
+          <form class="character-creator-form-form" action="characterprocess.php" method="post">
+            <div class="character-creator-form-input-container-container">
+              <div class="character-creator-form-input-container">
+                <p class="character-creator-form-text character-creator-form-text-first-name">Naam</p>
+                <input class="character-creator-form-input" type="text" name="first-name" required><br>
+                <p class="character-creator-form-text character-creator-form-text-last-name">Achteraam</p>
+                <input class="character-creator-form-input" type="text" name="last-name" required><br>
+                <p class="character-creator-form-text character-creator-form-text-race">Ras</p>
+                <select class="character-creator-form-input" type="number" name="race" value="" required>
+                   <option value="1">Dragonborn</option>
+                   <option value="2">Dwarf</option>
+                   <option value="4">Elf</option>
+                   <option value="5">Gnome</option>
+                   <option value="6">Human</option>
+                </select>
+                <p class="character-creator-form-text character-creator-form-text-class">Klasse</p>
+                <select class="character-creator-form-input" type="number" name="class" value="" required>
+                   <option value="1">Barbarian</option>
+                   <option value="2">Bard</option>
+                   <option value="3">Cleric</option>
+                   <option value="4">Druid</option>
+                   <option value="6">Fighter</option>
+                </select>
+                <p class="character-creator-form-text character-creator-form-text-level">Level</p>
+                <input class="character-creator-form-input" type="text" name="level" value="" required><br>
+                <p class="character-creator-form-text character-creator-form-text-xp">XP</p>
+                <input class="character-creator-form-input" type="text" name="xp" value="" required><br>
+                <p class="character-creator-form-text character-creator-form-text-backstory">Achtergrond</p>
+                <input class="character-creator-form-input" type="text" name="backstory" value="" required><br>
+              </div>
+            </div>
+
+            <input class="character-creator-form-submit" type="submit">
+          </form>
         </div>
       </div>
     </div>

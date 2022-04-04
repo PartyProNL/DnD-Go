@@ -114,19 +114,7 @@
         </div>
       </div>
       <div class="page">
-        <div class="character-new">
-          <p class="character-new-txt">Welkom terug
-          <?php
-          // Verbinden met de database
-          $email = $_SESSION["session_email"];
-          $cut = explode("@",$email);
-          echo $cut[0];
-          ?>
-          </p>
-          <div class="character-new-plus">
-            <img class="character-new-plus-pic"src="../images/icons/Plus.png" alt="Plus!">
-          </div>
-        </div>
+
       </div>
     </div>
   </body>
