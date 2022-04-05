@@ -342,3 +342,21 @@ footer {
   line-height: 50px;
   color: #000000;
 }
+
+button{
+  display: none;
+  position: absolute;
+  width: 5%;
+  height: 5%;
+  float: right;
+  background: #CD5C5C;
+border-radius: 15px;
+margin-left: 85%;
+margin-top: 0.8%;
+color: white;
+font-size: 120%;
+}
+
+button:hover{
+  background-color: #555;
+}
