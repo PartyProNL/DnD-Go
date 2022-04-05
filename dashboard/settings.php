@@ -126,6 +126,27 @@
               <div class="page-item-topper">
                 <h2 class="page-item-topper-text">E-mail aanpassen</h2>
               </div>
+              <div class="page-item-lower">
+                <div class="page-item-lower-inner">
+                  <form class="email-form" action="change-email.php" method="post">
+                    <div class="email-form-item-container">
+                      <p class="email-form-input-text">Oude e-mailadres</p>
+                      <input class="email-form-input" type="text" name="old" required><br>
+                    </div>
+                    <div class="email-form-item-container">
+                      <p class="email-form-input-text">Nieuwe e-mailadres</p>
+                      <input class="email-form-input" type="text" name="new" required><br>
+                    </div>
+                    <div class="email-form-item-container">
+                      <p class="email-form-input-text">Herhaling nieuwe</p>
+                      <input class="email-form-input" type="text" name="repeat" required><br>
+                    </div>
+                    <div class="email-form-submit-container">
+                      <input class="email-form-submit" type="submit">
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
             <div class="page-item page-item-right">
               <div class="page-item-topper">
@@ -135,6 +156,27 @@
             <div class="page-item page-item-middle">
               <div class="page-item-topper">
                 <h2 class="page-item-topper-text">Wachtwoord aanpassen</h2>
+              </div>
+              <div class="page-item-lower">
+                <div class="page-item-lower-inner">
+                  <form class="email-form" action="change-email.php" method="post">
+                    <div class="email-form-item-container">
+                      <p class="email-form-input-text">Oud wachtwoord</p>
+                      <input class="email-form-input" type="text" name="old" required><br>
+                    </div>
+                    <div class="email-form-item-container">
+                      <p class="email-form-input-text">Nieuw wachtwoord</p>
+                      <input class="email-form-input" type="text" name="new" required><br>
+                    </div>
+                    <div class="email-form-item-container">
+                      <p class="email-form-input-text">Herhaling nieuwe</p>
+                      <input class="email-form-input" type="text" name="repeat" required><br>
+                    </div>
+                    <div class="email-form-submit-container">
+                      <input class="email-form-submit" type="submit">
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
