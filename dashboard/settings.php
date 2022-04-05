@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/settings.css">
   </head>
   <body>
     <?php
@@ -114,7 +115,30 @@
         </div>
       </div>
       <div class="page">
-
+        <div class="page-inner">
+          <div class="page-inner-upper">
+            <div class="page-topper">
+              <h2 class="page-topper-text">Instellingen van account met e-mail <?php echo $_SESSION["session_email"];?></h2>
+            </div>
+          </div>
+          <div class="page-inner-lower">
+            <div class="page-item page-item-left">
+              <div class="page-item-topper">
+                <h2 class="page-item-topper-text">E-mail aanpassen</h2>
+              </div>
+            </div>
+            <div class="page-item page-item-right">
+              <div class="page-item-topper">
+                <h2 class="page-item-topper-text">Overig</h2>
+              </div>
+            </div>
+            <div class="page-item page-item-middle">
+              <div class="page-item-topper">
+                <h2 class="page-item-topper-text">Wachtwoord aanpassen</h2>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
