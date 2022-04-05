@@ -124,7 +124,39 @@
           ?>
           </p>
           <div class="character-new-plus">
-            <img class="character-new-plus-pic"src="../images/icons/Plus.png" alt="Plus!">
+            <a href="character-creation.php">
+              <img class="character-new-plus-pic"src="../images/icons/Plus.png" alt="Plus!">
+            </a>
+          </div>
+        </div>
+        <div class="characters-container">
+          <div class="characters-available">
+            <div class="characters-available-header">
+              <p class="characters-available-header-txt">Lijst van beschikbare classes</p>
+            </div>
+            <div class="scroll">
+              <?php
+              // Verbinden met de database
+              $db = new PDO('sqlite:../database/dndgo');
+              //Eerst characters ophalen van de huidige gebruiker Email
+              //Dan exploden voor losse getallen
+              //Vervolgens voor elk karacter het id ophalen
+              $sql = "SELECT * FROM characters";
+              $charaterResult = $db->query($sql);
+
+              foreach ($characterResult as $row) {
+                $name = $row['character_'];
+                $desc = $row['race_description'];
+                echo "<div class=\"race-desc\">
+                  <div class=\"race-desc-header\">
+                    <h3>$name</h3>
+                  </div>
+                  <p class=\"race-desc-txt\">$desc</p>
+                </div>";
+              }
+              $db = NULL;
+              ?>
+            </div>
           </div>
         </div>
       </div>
