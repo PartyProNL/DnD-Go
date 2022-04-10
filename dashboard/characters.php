@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/characters.css">
   </head>
   <body>
     <?php
@@ -116,82 +117,74 @@
         </div>
       </div>
       <div class="page">
-        <div class="character-new">
-          <p class="character-new-txt">Welkom terug
-          <?php
-          // Verbinden met de database
-          $email = $_SESSION["session_email"];
-          $cut = explode("@",$email);
-          echo $cut[0];
-          ?>
-          </p>
-          <div class="character-new-plus">
-            <a href="character-creation.php">
-              <img class="character-new-plus-pic"src="../images/icons/Plus.png" alt="Plus!">
-            </a>
-          </div>
-        </div>
-        <div class="characters-container">
-          <div class="characters-available">
-            <div class="characters-available-header">
-              <p class="characters-available-header-txt">Lijst van beschikbare classes</p>
-            </div>
-            <div class="scroll">
-              <?php
+        <div class="characters-page">
+          <div class="characters-topper">
+            <div class="characters-topper-left">
+              <p class="character-topper-text">Welkom terug <?php
               // Verbinden met de database
-              $db = new PDO('sqlite:../database/dndgo');
-
               $email = $_SESSION["session_email"];
-              $sql2 = "SELECT characters FROM users WHERE email = '".$email."'";
-              $resultaat2 = $db->query($sql2);
+              $cut = explode("@",$email);
+              echo $cut[0];
+              ?></p>
+            </div>
+            <div class="characters-topper-right">
+              <a class="characters-create-icon-container" href="settings.php"><img class="characters-create-icon" src="../images/icons/Plus.png" alt=""></a>
+            </div>
+          </div>
+          <div class="characters-lower">
+            <?php
+            // Verbinden met de database
+            $db = new PDO('sqlite:../database/dndgo');
 
-              $sql3 = "SELECT character_id FROM characters WHERE first_name = '$firstName' AND last_name = '$lastName'";
-              $resultaat3 = $db->query($sql3);
+            $email = $_SESSION["session_email"];
+            $sql2 = "SELECT characters FROM users WHERE email = '".$email."'";
+            $resultaat2 = $db->query($sql2);
 
-              $gevondenCharacters = "";
-              foreach ($resultaat2 as $row) {
-                $gevondenCharacters = $row["characters"];
+            $gevondenCharacters = "";
+            foreach ($resultaat2 as $row) {
+              $gevondenCharacters = $row["characters"];
+            }
+
+            $splitCharacters = array_map("intval", explode(",", $gevondenCharacters));
+
+            foreach($splitCharacters as $id) {
+              if($id != 0) {
+                $characterSql = "SELECT * FROM characters WHERE character_id='".$id."'";
+                $result = $db->query($characterSql);
+
+                foreach ($result as $row) {
+                  $name = $row['first_name']." ".$row['last_name'];
+                  $backstory = $row['backstory'];
+
+                  echo "<div class=\"character-list-test\">
+                    <div class=\"character-topper\">
+                      <h1 class=\"character-name\">$name</h1>
+                    </div>
+                    <div class=\"character-lower\">
+                      <div class=\"character-backstory-container\">
+                        <p class=\"character-backstory\">$backstory</p>
+                      </div>
+                      <div class=\"character-button-container\">
+                        <form class=\"character-button-form\" action=\"view-character.php\" method=\"post\">
+                          <input type=\"hidden\" name=\"id\" value=\"$id\">
+                          <input class=\"character-button\" type=\"submit\" value=\"Bekijken\">
+                        </form>
+                      </div>
+                      <div class=\"character-button-container\">
+                        <form class=\"character-button-form\" action=\"character-editor.php\" method=\"post\">
+                          <input type=\"hidden\" name=\"id\" value=\"$id\">
+                          <input class=\"character-button\" type=\"submit\" value=\"Bewerken\">
+                        </form>
+                      </div>
+                    </div>
+                  </div>";
+                }
               }
+            }
 
-              $splitCharacters = array_map("intval", explode(",", $gevondenCharacters));
-
-              $character1 = $splitCharacters[0];
-              $character2 = $splitCharacters[1];
-              $character3 = $splitCharacters[2];
-              $character4 = $splitCharacters[3];
-              $character5 = $splitCharacters[4];
-              $character6 = $splitCharacters[5];
-              $character7 = $splitCharacters[6];
-              $character8 = $splitCharacters[7];
-              $character9 = $splitCharacters[8];
-              $character10 = $splitCharacters[9];
-              //Eerst characters ophalen van de huidige gebruiker Email
-
-
-              //Dan exploden voor losse getallen
-
-              //Vervolgens voor elk karacter het id ophalen
-
-
-              $sql = "SELECT * FROM characters WHERE character_id = '$character1' OR '$character2' OR '$character3' OR '$character4' OR '$character5' OR '$character6' OR '$character7' OR '$character8' OR '$character9' OR '$character10'";
-              $charaterResult = $db->query($sql);
-
-              foreach ($charaterResult as $row) {
-                $firstName = $row["first-name"];
-                $lastName = $row["last-name"];
-                $race = $row["race"];
-                $class = $row["class"];
-                $level = $row["level"];
-                $xp = $row["xp"];
-                $backstory = $row["backstory"];
-                echo "<div class=\"race-desc\">
-                  <div class=\"race-desc-header\">$firstName $lastName</h3>
-                  </div>
-                  <p class=\"race-desc-txt\">$race $class $level $xp $backstory $desc</p>
-                </div>";
-              }
-              $db = NULL;
-              ?>
+            // Database connectie weer sluiten
+            $db = NULL;
+            ?>
             </div>
           </div>
         </div>
