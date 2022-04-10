@@ -141,6 +141,15 @@
                       <p class="email-form-input-text">Herhaling nieuwe</p>
                       <input class="email-form-input" type="text" name="repeat" required><br>
                     </div>
+                    <div class="email-form-error-container">
+                      <p class="email-form-error"><?php
+                        if(array_key_exists("email_change_error", $_SESSION)) {
+                          $email_change_error = $_SESSION["email_change_error"];
+                          echo $email_change_error;
+                          unset($_SESSION['email_change_error']);
+                        }
+                      ?></p>
+                    </div>
                     <div class="email-form-submit-container">
                       <input class="email-form-submit" type="submit">
                     </div>
@@ -159,7 +168,7 @@
               </div>
               <div class="page-item-lower">
                 <div class="page-item-lower-inner">
-                  <form class="email-form" action="change-email.php" method="post">
+                  <form class="email-form" action="change-password.php" method="post">
                     <div class="email-form-item-container">
                       <p class="email-form-input-text">Oud wachtwoord</p>
                       <input class="email-form-input" type="text" name="old" required><br>
@@ -171,6 +180,15 @@
                     <div class="email-form-item-container">
                       <p class="email-form-input-text">Herhaling nieuwe</p>
                       <input class="email-form-input" type="text" name="repeat" required><br>
+                    </div>
+                    <div class="email-form-error-container">
+                      <p class="email-form-error"><?php
+                        if(array_key_exists("password_change_error", $_SESSION)) {
+                          $email_change_error = $_SESSION["password_change_error"];
+                          echo $email_change_error;
+                          unset($_SESSION['password_change_error']);
+                        }
+                      ?></p>
                     </div>
                     <div class="email-form-submit-container">
                       <input class="email-form-submit" type="submit">
