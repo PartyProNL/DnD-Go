@@ -76,7 +76,7 @@
       </div>
       <div class="page">
         <div class="bewerken-header">
-          <p class="bewerken-header-txt">Karakter bewerken</p>
+          <p class="wip">Het werkt nog niet (Workt in progress)!!!</p>
         </div>
         <div class="gegevens">
             <div class="gegevens-header">
