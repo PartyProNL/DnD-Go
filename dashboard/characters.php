@@ -128,7 +128,7 @@
               ?></p>
             </div>
             <div class="characters-topper-right">
-              <a class="characters-create-icon-container" href="settings.php"><img class="characters-create-icon" src="../images/icons/Plus.png" alt=""></a>
+              <a class="characters-create-icon-container" href="character-creation.php"><img class="characters-create-icon" src="../images/icons/Plus.png" alt=""></a>
             </div>
           </div>
           <div class="characters-lower">
