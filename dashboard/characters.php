@@ -52,9 +52,11 @@
 
     <header>
       <div class="header-title-container">
-        <div class="header-logo-container">
+        <a href="../home.html">
+          <div class="header-logo-container">
           <img src="../images/icons/wolf.svg" alt="" class="header-logo">
-        </div>
+          </div>
+        </a>
         <div class="header-text-container">
           <h1 class="header-title">DnD Go</h1>
         </div>
@@ -138,20 +140,54 @@
               <?php
               // Verbinden met de database
               $db = new PDO('sqlite:../database/dndgo');
+
+              $email = $_SESSION["session_email"];
+              $sql2 = "SELECT characters FROM users WHERE email = '".$email."'";
+              $resultaat2 = $db->query($sql2);
+
+              $sql3 = "SELECT character_id FROM characters WHERE first_name = '$firstName' AND last_name = '$lastName'";
+              $resultaat3 = $db->query($sql3);
+
+              $gevondenCharacters = "";
+              foreach ($resultaat2 as $row) {
+                $gevondenCharacters = $row["characters"];
+              }
+
+              $splitCharacters = array_map("intval", explode(",", $gevondenCharacters));
+
+              $character1 = $splitCharacters[0];
+              $character2 = $splitCharacters[1];
+              $character3 = $splitCharacters[2];
+              $character4 = $splitCharacters[3];
+              $character5 = $splitCharacters[4];
+              $character6 = $splitCharacters[5];
+              $character7 = $splitCharacters[6];
+              $character8 = $splitCharacters[7];
+              $character9 = $splitCharacters[8];
+              $character10 = $splitCharacters[9];
               //Eerst characters ophalen van de huidige gebruiker Email
+
+
               //Dan exploden voor losse getallen
+
               //Vervolgens voor elk karacter het id ophalen
-              $sql = "SELECT * FROM characters";
+
+
+              $sql = "SELECT * FROM characters WHERE character_id = '$character1' OR '$character2' OR '$character3' OR '$character4' OR '$character5' OR '$character6' OR '$character7' OR '$character8' OR '$character9' OR '$character10'";
               $charaterResult = $db->query($sql);
 
-              foreach ($characterResult as $row) {
-                $name = $row['character_'];
-                $desc = $row['race_description'];
+              foreach ($charaterResult as $row) {
+                $firstName = $row["first-name"];
+                $lastName = $row["last-name"];
+                $race = $row["race"];
+                $class = $row["class"];
+                $level = $row["level"];
+                $xp = $row["xp"];
+                $backstory = $row["backstory"];
                 echo "<div class=\"race-desc\">
-                  <div class=\"race-desc-header\">
-                    <h3>$name</h3>
+                  <div class=\"race-desc-header\">$firstName $lastName</h3>
                   </div>
-                  <p class=\"race-desc-txt\">$desc</p>
+                  <p class=\"race-desc-txt\">$race $class $level $xp $backstory $desc</p>
                 </div>";
               }
               $db = NULL;

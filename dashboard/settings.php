@@ -53,9 +53,11 @@
 
     <header>
       <div class="header-title-container">
-        <div class="header-logo-container">
+        <a href="../home.html">
+          <div class="header-logo-container">
           <img src="../images/icons/wolf.svg" alt="" class="header-logo">
-        </div>
+          </div>
+        </a>
         <div class="header-text-container">
           <h1 class="header-title">DnD Go</h1>
         </div>
