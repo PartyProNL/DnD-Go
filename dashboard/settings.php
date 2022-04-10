@@ -179,7 +179,7 @@
                       <input class="email-form-input" type="text" name="old" required><br>
                     </div>
                     <div class="email-form-submit-container">
-                      <input class="email-form-submit" type="submit">
+                      <input class="email-form-submit" type="submit" value="Account verwijderen">
                     </div>
                   </div>
                 </form>
