@@ -161,6 +161,27 @@
               <div class="page-item-topper">
                 <h2 class="page-item-topper-text">Overig</h2>
               </div>
+              <div class="overig-lower">
+                <div class="overig-uitlog-container">
+                  <a class="overig-uitlog-knop" href="logoutprocess.php">Uitloggen</a>
+                </div>
+                <div class="overig-separator-container">
+                  <div class="overig-separator">
+
+                  </div>
+                </div>
+                <form class="overig-verwijder" action="delete_account.php" method="post">
+                  <div class="overig-verwijder-container">
+                    <div class="email-form-item-container">
+                      <p class="email-form-input-text">E-mail (voor bevestiging)</p>
+                      <input class="email-form-input" type="text" name="old" required><br>
+                    </div>
+                    <div class="email-form-submit-container">
+                      <input class="email-form-submit" type="submit">
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
             <div class="page-item page-item-middle">
               <div class="page-item-topper">
