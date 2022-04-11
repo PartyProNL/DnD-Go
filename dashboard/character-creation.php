@@ -131,6 +131,7 @@
                    <option value="4">Elf</option>
                    <option value="5">Gnome</option>
                    <option value="6">Human</option>
+                   <option value="7">Slangenmens</option>
                 </select>
                 <p class="character-creator-form-text character-creator-form-text-class">Klasse</p>
                 <select class="character-creator-form-input" type="number" name="class" value="" required>
