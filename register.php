@@ -28,7 +28,7 @@
                </div>
              </div>
 
-             <input class="register-menu-form-submit" type="submit">
+             <input class="register-menu-form-submit" type="submit" value="Registreren">
            </form>
          </div>
          <div class="register-menu-error-container">

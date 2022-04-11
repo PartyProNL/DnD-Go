@@ -34,7 +34,7 @@
               </div>
             </div>
 
-            <input class="login-menu-form-submit" type="submit">
+            <input class="login-menu-form-submit" type="submit" value="Inloggen">
           </form>
         </div>
         <div class="login-menu-error-container">
