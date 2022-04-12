@@ -225,3 +225,16 @@
   width: 90%;
   height: 95%;
 }
+
+.overig-input-container {
+  height: 65%;
+}
+
+.overig-input {
+  height: 25%;
+}
+
+.overig-confirm {
+  width: 80%;
+  height: 80%;
+}

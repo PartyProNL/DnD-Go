@@ -168,18 +168,16 @@
                   <a class="overig-uitlog-knop" href="logoutprocess.php">Uitloggen</a>
                 </div>
                 <div class="overig-separator-container">
-                  <div class="overig-separator">
-
-                  </div>
+                  <div class="overig-separator"></div>
                 </div>
                 <form class="overig-verwijder" action="delete_account.php" method="post">
                   <div class="overig-verwijder-container">
-                    <div class="email-form-item-container">
+                    <div class="email-form-item-container overig-input-container">
                       <p class="email-form-input-text">E-mail (voor bevestiging)</p>
-                      <input class="email-form-input" type="text" name="old" required><br>
+                      <input class="email-form-input overig-input" type="text" name="old" required><br>
                     </div>
                     <div class="email-form-submit-container">
-                      <input class="email-form-submit" type="submit" value="Account verwijderen">
+                      <input class="email-form-submit overig-confirm" type="submit" value="Account verwijderen">
                     </div>
                   </div>
                 </form>
