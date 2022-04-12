@@ -121,12 +121,12 @@
           <div class="cc-page-inner">
             <div class="form-container">
               <form class="cc-page-form" action="characterprocess.php" method="post">
-                <div class="cc-page-form-item-container"><p class="cc-page-form-input-text">Voornaam</p><input class="cc-page-form-input" type="text" name="voornaam" required><br></div>
-                <div class="cc-page-form-item-container"><p class="cc-page-form-input-text">Achternaam</p><input class="cc-page-form-input" type="text" name="achternaam" required><br></div>
+                <div class="cc-page-form-item-container"><p class="cc-page-form-input-text">Voornaam</p><input class="cc-page-form-input" type="text" name="first-name" required><br></div>
+                <div class="cc-page-form-item-container"><p class="cc-page-form-input-text">Achternaam</p><input class="cc-page-form-input" type="text" name="last-name" required><br></div>
 
                 <div class="cc-page-form-item-container">
                   <p class="cc-page-form-input-text">Ras</p>
-                  <select class="cc-page-form-input" type="text" name="ras" required>
+                  <select class="cc-page-form-input" type="text" name="race">
                     <?php
                     $db = new PDO('sqlite:../database/dndgo');
                     $sql = "SELECT race_name, race_id FROM races";
@@ -145,7 +145,7 @@
 
                 <div class="cc-page-form-item-container">
                   <p class="cc-page-form-input-text">Klasse</p>
-                  <select class="cc-page-form-input" type="text" name="klasse" required>
+                  <select class="cc-page-form-input" type="text" name="class">
                     <?php
                     $db = new PDO('sqlite:../database/dndgo');
                     $sql = "SELECT class_name, class_id FROM classes";
@@ -162,52 +162,13 @@
                   </select>
                 </div>
 
-                <div class="cc-page-form-item-container cc-page-form-achtergrond"><p class="cc-page-form-input-text">Achtergrond</p><input class="cc-page-form-input cc-page-form-achtergrond-input" type="text" name="achtergrond" required><br></div>
+                <div class="cc-page-form-item-container cc-page-form-achtergrond"><p class="cc-page-form-input-text">Achtergrond</p><input class="cc-page-form-input cc-page-form-achtergrond-input" type="text" name="backstory" required><br></div>
                 <div class="cc-page-form-item-container cc-page-form-submit-container">
                   <input class="cc-page-form-submit" type="submit" value="Karakter aanmaken">
                 </div>
               </form>
             </div>
           </div>
-        </div>
-
-
-        <div class="character-creator-form">
-          <form class="character-creator-form-form" action="characterprocess.php" method="post">
-            <div class="character-creator-form-input-container-container">
-              <div class="character-creator-form-input-container">
-                <p class="character-creator-form-text character-creator-form-text-first-name">Naam</p>
-                <input class="character-creator-form-input" type="text" name="first-name" required><br>
-                <p class="character-creator-form-text character-creator-form-text-last-name">Achteraam</p>
-                <input class="character-creator-form-input" type="text" name="last-name" required><br>
-                <p class="character-creator-form-text character-creator-form-text-race">Ras</p>
-                <select class="character-creator-form-input" type="number" name="race" value="" required>
-                   <option value="1">Dragonborn</option>
-                   <option value="2">Dwarf</option>
-                   <option value="4">Elf</option>
-                   <option value="5">Gnome</option>
-                   <option value="6">Human</option>
-                   <option value="7">Slangenmens</option>
-                </select>
-                <p class="character-creator-form-text character-creator-form-text-class">Klasse</p>
-                <select class="character-creator-form-input" type="number" name="class" value="" required>
-                   <option value="1">Barbarian</option>
-                   <option value="2">Bard</option>
-                   <option value="3">Cleric</option>
-                   <option value="4">Druid</option>
-                   <option value="6">Fighter</option>
-                </select>
-                <p class="character-creator-form-text character-creator-form-text-level">Level</p>
-                <input class="character-creator-form-input" type="text" name="level" value="" required><br>
-                <p class="character-creator-form-text character-creator-form-text-xp">XP</p>
-                <input class="character-creator-form-input" type="text" name="xp" value="" required><br>
-                <p class="character-creator-form-text character-creator-form-text-backstory">Achtergrond</p>
-                <input class="character-creator-form-input" type="text" name="backstory" value="" required><br>
-              </div>
-            </div>
-
-            <input class="character-creator-form-submit" type="submit">
-          </form>
         </div>
       </div>
     </div>
