@@ -132,7 +132,7 @@
             </div>
           </div>
 
-              <div class="scroll">
+              <div class="scroll scroll-characters">
 
 
 
