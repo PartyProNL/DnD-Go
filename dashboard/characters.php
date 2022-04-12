@@ -131,6 +131,11 @@
               <a class="characters-create-icon-container" href="character-creation.php"><img class="characters-create-icon" src="../images/icons/Plus.png" alt=""></a>
             </div>
           </div>
+
+              <div class="scroll">
+
+
+
           <div class="characters-lower">
             <?php
             // Verbinden met de database
@@ -185,6 +190,8 @@
             // Database connectie weer sluiten
             $db = NULL;
             ?>
+            </div>
+            </div>
             </div>
           </div>
         </div>
