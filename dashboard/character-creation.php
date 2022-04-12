@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/character-creation.css">
   </head>
   <body>
     <?php
@@ -116,6 +117,61 @@
         </div>
       </div>
       <div class="page">
+        <div class="cc-page-container">
+          <div class="cc-page-inner">
+            <div class="form-container">
+              <form class="cc-page-form" action="characterprocess.php" method="post">
+                <div class="cc-page-form-item-container"><p class="cc-page-form-input-text">Voornaam</p><input class="cc-page-form-input" type="text" name="voornaam" required><br></div>
+                <div class="cc-page-form-item-container"><p class="cc-page-form-input-text">Achternaam</p><input class="cc-page-form-input" type="text" name="achternaam" required><br></div>
+
+                <div class="cc-page-form-item-container">
+                  <p class="cc-page-form-input-text">Ras</p>
+                  <select class="cc-page-form-input" type="text" name="ras" required>
+                    <?php
+                    $db = new PDO('sqlite:../database/dndgo');
+                    $sql = "SELECT race_name, race_id FROM races";
+                    $result = $db->query($sql);
+
+                    foreach ($result as $row) {
+                      $id = $row['race_id'];
+                      $name = $row['race_name'];
+                      echo "<option value=\"$id\">$name</option>";
+                    }
+
+                    $db = null;
+                    ?>
+                  </select>
+                </div>
+
+                <div class="cc-page-form-item-container">
+                  <p class="cc-page-form-input-text">Klasse</p>
+                  <select class="cc-page-form-input" type="text" name="klasse" required>
+                    <?php
+                    $db = new PDO('sqlite:../database/dndgo');
+                    $sql = "SELECT class_name, class_id FROM classes";
+                    $result = $db->query($sql);
+
+                    foreach ($result as $row) {
+                      $id = $row['raceclass_id_id'];
+                      $name = $row['class_name'];
+                      echo "<option value=\"$id\">$name</option>";
+                    }
+
+                    $db = null;
+                    ?>
+                  </select>
+                </div>
+
+                <div class="cc-page-form-item-container cc-page-form-achtergrond"><p class="cc-page-form-input-text">Achtergrond</p><input class="cc-page-form-input cc-page-form-achtergrond-input" type="text" name="achtergrond" required><br></div>
+                <div class="cc-page-form-item-container cc-page-form-submit-container">
+                  <input class="cc-page-form-submit" type="submit" value="Karakter aanmaken">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
         <div class="character-creator-form">
           <form class="character-creator-form-form" action="characterprocess.php" method="post">
             <div class="character-creator-form-input-container-container">
