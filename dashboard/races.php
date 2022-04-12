@@ -119,7 +119,7 @@
         <div class="races-available-container">
           <div class="races-available">
             <div class="races-available-header">
-              <p class="races-available-header-txt">Lijst van beschikbare classes</p>
+              <p class="races-available-header-txt">Lijst van beschikbare races</p>
             </div>
             <div class="scroll">
               <?php
