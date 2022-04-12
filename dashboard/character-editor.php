@@ -7,8 +7,50 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/character-editor.css">
   </head>
   <body>
+    <?php
+    session_start();
+
+    if(array_key_exists("session", $_SESSION)) {
+      // De session token ophalen
+      $session_token = $_SESSION["session"];
+
+      // Email Ophalen
+      $session_email = $_SESSION["session_email"];
+
+      // Checken of de session token wel in de database zit
+      $db = new PDO('sqlite:../database/dndgo');
+      $sql = "SELECT COUNT(session) AS aantal FROM users WHERE session = '".$session_token."' AND email = '".$session_email."'";
+      $resultaat = $db->query($sql);
+      $db = null;
+
+      // Ophalen hoeveel accounts er zijn gevonden met dezelfde session token
+      $aantalGevondenAccounts = 0;
+      foreach ($resultaat as $row) {
+        $aantalGevondenAccounts = $row['aantal'];
+      }
+
+      if($aantalGevondenAccounts == 0) {
+        // Session token weghalen
+        unset($_SESSION['session']);
+
+        // Bericht meegeven dat de sessie verlopen is
+        $_SESSION["session_ended"] = "Je sessie is verlopen. Log opnieuw in.";
+
+        // Doorsturen naar de login pagina
+        header('Location: ../login.php');
+      }
+    } else {
+      // Bericht meegeven dat de sessie verlopen is
+      $_SESSION["session_ended"] = "Je sessie is verlopen. Log opnieuw in.";
+
+      // Doorsturen naar de login pagina
+      header('Location: ../login.php');
+    }
+     ?>
+
     <header>
       <div class="header-title-container">
         <a href="../home.html">
@@ -75,67 +117,115 @@
         </div>
       </div>
       <div class="page">
-        <div class="bewerken-header">
-          <p class="wip">Het werkt nog niet (Workt in progress)!!!</p>
-        </div>
-        <div class="gegevens">
-            <div class="gegevens-header">
-              <p class="gegevens-header-txt">Gegevens bewerken</p>
+
+        <?php
+        $db = new PDO('sqlite:../database/dndgo');
+        $characterId =  $_POST['id'];
+        $sql2 = "SELECT * FROM characters WHERE character_id = '".$characterId."'";
+        $result2 = $db->query($sql2);
+
+        $first_name = "";
+        $last_name = "";
+        $backstory = "";
+        $level = "";
+        $xp = "";
+        foreach ($result2 as $row) {
+          $first_name = $row['first_name'];
+          $last_name = $row['last_name'];
+          $backstory = $row['backstory'];
+          $level = $row['level'];
+          $xp = $row['xp'];
+        }
+
+        $db = null;
+        ?>
+
+        <div class="ce-page">
+          <div class="ce-page-inner">
+            <div class="ce-page-inner-upper">
+              <div class="ce-page-topper">
+                <h2 class="ce-page-topper-text">Bewerken van <?php echo $first_name." ".$last_name; ?></h2>
+              </div>
             </div>
-            <div class="gegevens-veranderen">
-                <form class="character-editoror-form-form" action="characterprocess.php" method="post">
-                  <div class="character-editoror-form-input-container-container">
-                    <div class="character-editoror-form-input-container">
-                      <p class="character-editoror-form-text character-editoror-form-text-first-name">Vooraam</p>
-                      <input class="character-editoror-form-input" type="text" name="first-name" required><br>
-                      <p class="character-editoror-form-text character-editoror-form-text-last-name">Achteraam</p>
-                      <input class="character-editoror-form-input" type="text" name="last-name" required><br>
-                      <p class="character-editoror-form-text character-editoror-form-text-race">Ras</p>
-                      <select class="character-editoror-form-input" type="number" name="race" value="" required>
-                         <option value="1">Dragonborn</option>
-                         <option value="2">Dwarf</option>
-                         <option value="4">Elf</option>
-                         <option value="5">Gnome</option>
-                         <option value="6">Human</option>
-                      </select>
-                      <p class="character-editoror-form-text character-editoror-form-text-class">Klasse</p>
-                      <select class="character-editoror-form-input" type="number" name="class" value="" required>
-                         <option value="1">Barbarian</option>
-                         <option value="2">Bard</option>
-                         <option value="3">Cleric</option>
-                         <option value="4">Druid</option>
-                         <option value="6">Fighter</option>
-                      </select>
-                      <p class="character-editoror-form-text character-editoror-form-text-level">Level</p>
-                      <input class="character-editoror-form-input" type="text" name="level" value="" required><br>
-                      <p class="character-editoror-form-text character-editoror-form-text-xp">XP</p>
-                      <input class="character-editoror-form-input" type="text" name="xp" value="" required><br>
-                      <p class="character-editoror-form-text character-editoror-form-text-backstory">Achtergrond</p>
-                      <input class="character-editoror-form-input" type="text" name="backstory" value="" required><br>
-                      <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
+            <div class="ce-page-inner-lower">
+              <div class="page-item page-item-left">
+                <div class="page-item-topper">
+                  <h2 class="page-item-topper-text">Algemeen</h2>
+                </div>
+                <div class="page-item-lower">
+                  <div class="page-item-lower-inner">
+                    <form class="email-form" action="change-general.php" method="post">
+                      <div class="email-form-item-container">
+                        <p class="email-form-input-text">Voornaam</p>
+                        <input class="email-form-input" type="text" name="first_name" value="<?php echo $first_name;  ?>" required><br>
+                      </div>
+                      <div class="email-form-item-container">
+                        <p class="email-form-input-text">Achternaam</p>
+                        <input class="email-form-input" type="text" name="last_name" value="<?php echo $last_name;  ?>" required><br>
+                      </div>
+                      <div class="email-form-item-container backstory">
+                        <p class="email-form-input-text">Achtergrond</p>
+                        <input class="email-form-input backstory-input" type="text" name="backstory" value="<?php echo $backstory;  ?>" required><br>
+                      </div>
+                      <div class="email-form-submit-container">
+                        <input type="hidden" name="character_id" value="<?php echo $_POST['id']; ?>">
+                        <input class="email-form-submit" type="submit">
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="page-item page-item-right">
+                <div class="page-item-topper topper-right">
+                  <h2 class="page-item-topper-text">Verwijderen</h2>
+                </div>
+                <div class="overig-lower">
+                  <form class="overig-verwijder" action="delete_character.php" method="post">
+                    <div class="overig-verwijder-container">
+                      <div class="email-form-item-container overig-input-container">
+                        <p class="email-form-input-text">E-mail (voor bevestiging)</p>
+                        <input class="email-form-input overig-input" type="text" name="old" required><br>
+                        <input type="hidden" name="character_id" value="<?php echo $_POST['id']; ?>">
+                      </div>
+                      <div class="email-form-submit-container">
+                        <input class="email-form-submit overig-confirm" type="submit" value="Karakter verwijderen">
+                      </div>
                     </div>
+                  </form>
+                </div>
+              </div>
+              <div class="page-item page-item-middle">
+                <div class="page-item-topper">
+                  <h2 class="page-item-topper-text">Levels</h2>
+                </div>
+                <div class="page-item-lower">
+                  <div class="page-item-lower-inner">
+                    <form class="email-form" action="change-levels.php" method="post">
+                      <div class="email-form-item-container">
+                        <p class="email-form-input-text">Level</p>
+                        <input class="email-form-input" type="text" name="level" value="<?php echo $level;  ?>" required><br>
+                      </div>
+                      <div class="email-form-item-container">
+                        <p class="email-form-input-text">Experience</p>
+                        <input class="email-form-input" type="text" name="experience" value="<?php echo $xp;  ?>" required><br>
+                      </div>
+                      <div class="email-form-item-container">
+
+                      </div>
+                      <div class="email-form-error-container">
+
+                      </div>
+                      <div class="email-form-submit-container">
+                        <input type="hidden" name="character_id" value="<?php echo $_POST['id']; ?>">
+                        <input class="email-form-submit" type="submit">
+                      </div>
+                    </form>
                   </div>
-                  <input class="gegevens-veranderen-bevestigen" type="submit">
-                </form>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-        <div class="karakter-verwijderen">
-            <div class="gegevens-header">
-              <p class="gegevens-header-txt">Karakter verwijderen</p>
-            </div>
-            <div class="gegevens-veranderen">
-                <form class="character-editoror-form-form" action="characterprocess.php" method="post">
-                  <div class="character-editoror-form-input-container-container">
-                    <div class="character-editoror-form-input-container">
-                      <p class="character-editoror-form-text character-editoror-form-text-first-name">Email voor bevestiging</p>
-                      <input class="character-editoror-form-input" type="text" name="email" required><br>
-                      <input type="hidden" name="id" value="<?php echo $_POST['id']; ?>">
-                  </div>
-                  <input class="gegevens-veranderen-bevestigen" type="submit">
-                </form>
-            </div>
-        </div>
-      </div>
     </div>
   </body>
 </html>
