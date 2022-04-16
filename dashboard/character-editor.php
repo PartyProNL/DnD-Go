@@ -154,7 +154,7 @@
                 </div>
                 <div class="page-item-lower">
                   <div class="page-item-lower-inner">
-                    <form class="email-form" action="change-general.php" method="post">
+                    <form class="email-form" action="character-editor-general.php" method="post">
                       <div class="email-form-item-container">
                         <p class="email-form-input-text">Voornaam</p>
                         <input class="email-form-input" type="text" name="first_name" value="<?php echo $first_name;  ?>" required><br>
@@ -180,7 +180,7 @@
                   <h2 class="page-item-topper-text">Verwijderen</h2>
                 </div>
                 <div class="overig-lower">
-                  <form class="overig-verwijder" action="delete_character.php" method="post">
+                  <form class="overig-verwijder" action="character-editor-delete.php" method="post">
                     <div class="overig-verwijder-container">
                       <div class="email-form-item-container overig-input-container">
                         <p class="email-form-input-text">E-mail (voor bevestiging)</p>
@@ -200,7 +200,7 @@
                 </div>
                 <div class="page-item-lower">
                   <div class="page-item-lower-inner">
-                    <form class="email-form" action="change-levels.php" method="post">
+                    <form class="email-form" action="character-editor-levels.php" method="post">
                       <div class="email-form-item-container">
                         <p class="email-form-input-text">Level</p>
                         <input class="email-form-input" type="text" name="level" value="<?php echo $level;  ?>" required><br>

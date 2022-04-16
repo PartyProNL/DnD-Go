@@ -119,7 +119,7 @@
         $db = new PDO('sqlite:../database/dndgo');
         $id = $_POST['id'];
 
-        $characterSql = "SELECT * FROM characters WHERE character_id='".$id."'";
+        $characterSql = "SELECT * FROM characters JOIN races ON characters.race_id=races.race_id JOIN classes ON characters.class_id=classes.class_id WHERE character_id='$id'";
         $result = $db->query($characterSql);
 
         foreach ($result as $row) {
@@ -130,6 +130,14 @@
           echo "Level: ".$row['level']."<br>";
           echo "Experience Points: ".$row['xp']."<br>";
           echo "Backstory: ".$row['backstory']."<br>";
+
+          echo "Race: ".$row['race_name']."<br>";
+          echo "Race beschrijving: ".$row['race_description']."<br>";
+          echo "Race bonus: ".$row['race_bonus']."<br>";
+
+          echo "Class: ".$row['class_name']."<br>";
+          echo "Class beschrijving: ".$row['class_description']."<br>";
+          echo "Class bonus: ".$row['class_bonus']."<br>";
         }
         ?>
       </div>
